@@ -15,7 +15,7 @@ object Main extends App {
   //Solucion Priss
   def descuento(n: Int) = {
     if (n < 50) println("NO hay descuento")
-    else if (n >= 50 || n < 100) { n * 0.9 }
+    else if (n >= 50 && n < 100) { n * 0.9 }
     else { n * 0.85 }
   }
 
