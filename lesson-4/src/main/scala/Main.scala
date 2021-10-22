@@ -27,3 +27,46 @@ object Main extends App {
   println("El precio es: " + descuento(80))
   println("El precio es: " + descuento(130))
 }
+
+//ejercicio No. 6
+def power(base: Int, exponent: Int) = {
+    var ans = 1;
+    if (exponent != 0) {
+        var int absExponent = exponent > 0 else exponent = (-1) * exponent;
+        for (i <- absExponent; _ <- i+=) {
+            ans *= base;
+        }
+      }
+        if (exponent < 0) {
+            // For negative exponent, must invert
+            ans = 1 / ans;
+    } else {
+        // exponent is 0
+        ans = 1;
+    }
+  ans;
+}
+
+//ejercicio de clases
+class Person (name: String, age: Int = 0) {
+  def presentYourself = {
+    f"Hello I'm $name and I have $age years old"
+  }
+}
+
+//Instancias para ejecutar la clase Person
+val martin = new Person("Martin", 18)
+val bob = new Person("Bob")
+
+//ejercicio de subclase
+class profesor extends Person(name: String, age: Int){
+  override def presentYourself = {
+    f"Hello I'm the professor $name and I have $age years old"
+  }
+}
+
+class estudiante extends Person(name: String, age: Int, id: int){
+  override def presentYourself: String = {
+    f"Hello I'm the student $name, with de $id and I have $age years old"
+  }
+}
