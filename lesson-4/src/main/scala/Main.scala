@@ -35,9 +35,26 @@ object Main extends App {
       println(res)
       res *= base
     }
-    println("El resultado con pow es: " + scala.math.pow(base,exponent))
+    println("El resultado con pow es: " + scala.math.pow(base, exponent))
     res
   }
-  println("El resultado con mi funcion es: " + powFunc(2,3))
+  println("El resultado con mi funcion es: " + powFunc(2, 3))
 
+  //Ejercicio leccion 7
+  //Solucion Mariale
+  class Beverage(name: String) {
+    def moreIce(number: Int): String = s"$number ice cubes were added" 
+    def reHeat(time: Int): String = s"The beverage was heated for $time minutes"
+  }
+  class HotBev(name: String) extends Beverage (name){
+    override def reHeat(time: Int) =  s"The $name was heated for $time minutes"
+  }
+  class ColdBev(name: String) extends Beverage (name){
+    override def moreIce(number: Int)  = s"$number ice cubes were added to the $name"
+  }
+
+  val coffee = new HotBev(name="Coffee")
+  val tea = new ColdBev(name="Tea")
+  println(tea.moreIce(2))
+  println(coffee.reHeat(3))
 }
